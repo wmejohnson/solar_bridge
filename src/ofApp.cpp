@@ -91,7 +91,7 @@ void ofApp::keyPressed(int key){
             ofToggleFullscreen();
             break;
         case 'S':
-            ofSaveScreen("solar_bridge"+ofGetTimestampString()+".png");
+            ofSaveScreen("ss/solar_bridge"+ofGetTimestampString()+".png");
             break;
         case 'g':
             if(drawGUI){
