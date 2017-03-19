@@ -1,3 +1,9 @@
 # solar_bridge
 
-Inspired by the album art for the Emeralds album. 
+Tentacle drawing inspired by the album art for the Emeralds album. 
+
+![screenshot.](ss.png)
+
+## TODO
+
+Lots
