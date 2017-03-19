@@ -55,4 +55,5 @@ public:
     //post-process
     ofFbo fbo;
     ofShader s;
+    ofShader poster;
 };

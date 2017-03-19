@@ -35,6 +35,17 @@ void ofApp::setup(){
     
     //load shader
     s.load("shaders/shader");
+    poster.load("shaders/poster");
+    
+    ofFbo::Settings s;
+    s.width             = ofGetWidth();
+    s.height			= ofGetHeight();
+    s.internalformat    = GL_RGBA32F_ARB;
+    s.useDepth			= false;
+    s.wrapModeVertical  = GL_MIRRORED_REPEAT_ARB;
+    s.wrapModeHorizontal= GL_MIRRORED_REPEAT_ARB;
+    
+    fbo.allocate(s);
     
     //vines
     attractor = ofVec3f(x*ofGetWidth(), y*ofGetHeight(), 0);
@@ -65,6 +76,7 @@ void ofApp::draw(){
     ofSetWindowTitle(ofToString(ofGetFrameRate()));
     ofEnableAlphaBlending();
 
+    fbo.begin();
     //background
     ofBackground(br, bg, bb, 1.0);
     
@@ -73,15 +85,20 @@ void ofApp::draw(){
     for(vine v : vines) {
         v.draw(ofColor(sr, sg, sb));
     }
-    
-    s.begin();
-    s.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
-    s.setUniform1f("u_time", ofGetElapsedTimef());
-    ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
-    s.end();
+    fbo.end();
+
+//    s.begin();
+//    s.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
+//    s.setUniform1f("u_time", ofGetElapsedTimef());
+//    ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
+//    s.end();
+
+    poster.begin();
+    poster.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
+    fbo.draw(0, 0);
+    poster.end();
 
     if(drawGUI) gui.draw();
-
 }
 
 //--------------------------------------------------------------
@@ -94,11 +111,7 @@ void ofApp::keyPressed(int key){
             ofSaveScreen("ss/solar_bridge"+ofGetTimestampString()+".png");
             break;
         case 'g':
-            if(drawGUI){
-                drawGUI = false;
-            } else {
-                drawGUI = true;
-            }
+            drawGUI = !drawGUI;
             break;
         case 'r':
             reset();
@@ -162,7 +175,15 @@ void ofApp::mouseExited(int x, int y){
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
-
+    ofFbo::Settings s;
+    s.width             = ofGetWidth();
+    s.height			= ofGetHeight();
+    s.internalformat    = GL_RGBA32F_ARB;
+    s.useDepth			= false;
+    s.wrapModeVertical  = GL_MIRRORED_REPEAT_ARB;
+    s.wrapModeHorizontal= GL_MIRRORED_REPEAT_ARB;
+    
+    fbo.allocate(s);
 }
 
 //--------------------------------------------------------------

@@ -82,6 +82,8 @@
 		1C0DA2561397A7DE0246858B /* ofxGuiGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxGuiGroup.h; path = ../../../addons/ofxGui/src/ofxGuiGroup.h; sourceTree = SOURCE_ROOT; };
 		20F35AFADAF0068B067E713F /* OscReceivedElements.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscReceivedElements.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscReceivedElements.h; sourceTree = SOURCE_ROOT; };
 		23640F57DF6C4BB6BFC5DA4C /* PacketListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = PacketListener.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/PacketListener.h; sourceTree = SOURCE_ROOT; };
+		2726125A1E7F111400AAD9C1 /* poster.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = poster.frag; path = bin/data/shaders/poster.frag; sourceTree = "<group>"; };
+		2726125B1E7F111400AAD9C1 /* poster.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = poster.vert; path = bin/data/shaders/poster.vert; sourceTree = "<group>"; };
 		274537741E7B304800539A24 /* shader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shader.vert; path = bin/data/shaders/shader.vert; sourceTree = "<group>"; };
 		274537751E7B305700539A24 /* shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shader.frag; path = bin/data/shaders/shader.frag; sourceTree = "<group>"; };
 		274537771E7B326F00539A24 /* vineFella.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vineFella.cpp; sourceTree = "<group>"; };
@@ -187,6 +189,8 @@
 		274537731E7B303500539A24 /* shaders */ = {
 			isa = PBXGroup;
 			children = (
+				2726125A1E7F111400AAD9C1 /* poster.frag */,
+				2726125B1E7F111400AAD9C1 /* poster.vert */,
 				274537741E7B304800539A24 /* shader.vert */,
 				274537751E7B305700539A24 /* shader.frag */,
 			);

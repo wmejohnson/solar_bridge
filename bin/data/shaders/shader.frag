@@ -1,5 +1,5 @@
 // fragment shader
-#version 120
+#version 150
 #define PI 3.14159265359
 #define TWO_PI 6.28318530718
 
@@ -7,6 +7,9 @@
 uniform float           u_time;
 uniform vec2            u_resolution;
 uniform vec2            u_mouse;
+
+
+out vec4 outputColor;
 
 //random from shader book
 float random (vec2 st) {
@@ -21,6 +24,6 @@ void main() {
     
     vec3 rand = vec3(random(st));
     
-    gl_FragColor = vec4(rand,0.05);
+    outputColor = vec4(rand,0.05);
 }
 
