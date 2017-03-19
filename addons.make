@@ -1,0 +1,4 @@
+ofxAChaosLib-master
+ofxGui
+ofxOsc
+ofxXmlSettings
