@@ -6,4 +6,4 @@ Tentacle drawing inspired by the album art for the Emeralds album. Built with [o
 
 ## TODO
 
-Lots
+- More shaders (chromatic abberation, blur) to get a sort of scanned image effect
