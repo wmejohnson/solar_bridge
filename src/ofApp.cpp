@@ -35,7 +35,6 @@ void ofApp::setup(){
     
     //load shader
     s.load("shaders/shader");
-    color_shift.load("shaders/color_shift");
     
     //vines
     attractor = ofVec3f(x*ofGetWidth(), y*ofGetHeight(), 0);
